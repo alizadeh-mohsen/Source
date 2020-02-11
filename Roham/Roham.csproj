@@ -37,7 +37,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Roham Formula</ProductName>
     <PublisherName>Mohsen Alizadeh</PublisherName>
-    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
