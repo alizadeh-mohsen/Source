@@ -37,6 +37,7 @@ namespace Roham
         {
             ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
             txtUnit.Text = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
+            chkFixed.Checked = (bool)dataGridView1.Rows[e.RowIndex].Cells["fixed"].Value;
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace Roham
                         CommandType = CommandType.StoredProcedure
                     };
                     command.Parameters.AddWithValue("@name", txtUnit.Text.Trim());
+                    command.Parameters.AddWithValue("@fixed", chkFixed.Checked);
                     command.ExecuteNonQuery();
                     DisplayData();
                     ClearData();
@@ -69,6 +71,8 @@ namespace Roham
                     };
                     command.Parameters.AddWithValue("@id", ID);
                     command.Parameters.AddWithValue("@name", txtUnit.Text.Trim());
+                    command.Parameters.AddWithValue("@fixed", chkFixed.Checked);
+
                     command.ExecuteNonQuery();
                     DisplayData();
                     ClearData();
@@ -79,6 +83,8 @@ namespace Roham
         private void ClearData()
         {
             txtUnit.Text = "";
+            chkFixed.Checked = false;
+
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -89,7 +95,7 @@ namespace Roham
                 Text = "Delete",
                 UseColumnTextForButtonValue = true,
             };
-            int columnIndex = 3;
+            int columnIndex = 4;
             if (dataGridView1.Columns["delete"] == null)
             {
                 dataGridView1.Columns.Insert(columnIndex, deleteButtonColumn);
