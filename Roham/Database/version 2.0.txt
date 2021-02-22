@@ -1,0 +1,48 @@
+USE [ColorDb]
+GO
+/****** Object:  StoredProcedure [dbo].[Search]    Script Date: 2/11/2020 2:32:24 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[Search]
+@carid int=NULL,
+@typeid int=NULL,
+@code varchar(50)=NULL,
+@desc1 varchar(200)=NULL,
+@desc2 varchar(200)=NULL
+
+
+as 
+BEGIN
+
+IF @code='' SET @code=NULL
+IF @desc1='' SET @desc1=NULL
+IF @desc2='' SET @desc2=NULL
+IF @typeid='' SET @typeid=NULL
+IF @carid='' SET @carid=NULL
+
+SELECT	
+		Color.ID as ColorId,
+		Color.Code as [Color Code],
+		Car.Car as [Make/Company],
+		ColorType.[Type] as [Color Type],
+		Color.comment 
+FROM    
+		Color inner join 
+		ColorType on color.ColorTypeID=ColorType.ID inner join 
+		Car on Color.CarID=Car.ID 
+WHERE	
+			comment like COALESCE('%'+@desc1 +'%',comment)
+			AND
+			comment like COALESCE('%'+@desc2 +'%',comment)
+			AND
+			[Color].Code like COALESCE(@code+'%',[Color].Code)
+			AND
+			ColorTypeID=COALESCE(@typeid,ColorTypeID)
+			AND
+			CarID=COALESCE(@carid,CarID)
+
+Order By 
+			Color.Code
+END

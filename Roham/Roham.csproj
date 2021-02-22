@@ -235,8 +235,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\version 2.0.txt" />
+    <Content Include="Database\version 2.1.sql" />
     <Content Include="renk_1_256px.ico" />
     <Content Include="RohamPaint.ico" />
+    <Content Include="Shared\DateTimeSelector.dll" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
