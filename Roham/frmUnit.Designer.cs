@@ -33,9 +33,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtUnit = new System.Windows.Forms.TextBox();
-            this.chkFixed = new System.Windows.Forms.CheckBox();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtUnit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,24 +87,6 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
-            // txtUnit
-            // 
-            this.txtUnit.Location = new System.Drawing.Point(62, 21);
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(142, 22);
-            this.txtUnit.TabIndex = 5;
-            // 
-            // chkFixed
-            // 
-            this.chkFixed.AutoSize = true;
-            this.chkFixed.ForeColor = System.Drawing.Color.Yellow;
-            this.chkFixed.Location = new System.Drawing.Point(24, 53);
-            this.chkFixed.Name = "chkFixed";
-            this.chkFixed.Size = new System.Drawing.Size(59, 18);
-            this.chkFixed.TabIndex = 8;
-            this.chkFixed.Text = "Fixed";
-            this.chkFixed.UseVisualStyleBackColor = true;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Column1";
@@ -113,13 +94,19 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
+            // txtUnit
+            // 
+            this.txtUnit.Location = new System.Drawing.Point(62, 21);
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.Size = new System.Drawing.Size(142, 22);
+            this.txtUnit.TabIndex = 5;
+            // 
             // frmUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(478, 398);
-            this.Controls.Add(this.chkFixed);
             this.Controls.Add(this.txtUnit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -144,7 +131,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtUnit;
-        private System.Windows.Forms.CheckBox chkFixed;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

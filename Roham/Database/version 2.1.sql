@@ -1,4 +1,3 @@
-ALTER TABLE [dbo].[Unit] ADD Fixed bit not null default 0;
 alter table [dbo].[Color] add Usage nvarchar(max);
 alter table [dbo].[Color] add Accuracy tinyint not  null default 0;
 ALTER TABLE color ALTER COLUMN [LastUpdate] date;
@@ -19,31 +18,29 @@ ALTER PROCEDURE [dbo].[SelectUnit]
 AS
 BEGIN
 SELECT [ID]
-      ,[Name],
-	   Fixed
+      ,[Name]
+	   
   FROM [Unit]
 END;
 GO
 ALTER PROCEDURE [dbo].[InsertUnit]
-@name nvarchar(50),
-@fixed bit
+@name nvarchar(50)
+
 AS
 BEGIN
 	INSERT INTO [Unit] 
-	([Name],[Fixed]) 
+	([Name]) 
 	VALUES    
-	(@name,@fixed)
+	(@name)
 END;
 GO
 ALTER PROCEDURE [dbo].[UpdateUnit]
 @name nvarchar(50),
-@fixed bit,
 @id int
 AS
 BEGIN
 UPDATE [Unit] 
-   SET [Name] = @name,
-		Fixed= @fixed
+   SET [Name] = @name
 
  WHERE id=@id
 END;
@@ -139,7 +136,7 @@ SELECT
 		Car.Car,
 		CT.[Type],
 		U.[Name],
-		u.fixed,
+		
 		c.Accuracy,
 		c.Usage
 FROM         
