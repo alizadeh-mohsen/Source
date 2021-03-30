@@ -37,7 +37,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Roham Formula</ProductName>
     <PublisherName>Mohsen Alizadeh</PublisherName>
-    <ApplicationRevision>32</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -139,12 +139,19 @@
     <Compile Include="frmResult.Designer.cs">
       <DependentUpon>frmResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUnit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUnit.Designer.cs">
       <DependentUpon>frmUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +204,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBase.resx">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUnit.resx">
       <DependentUpon>frmUnit.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +247,7 @@
   <ItemGroup>
     <Content Include="Database\version 2.0.txt" />
     <Content Include="Database\version 2.1.sql" />
+    <Content Include="Database\version 2.2.sql" />
     <Content Include="renk_1_256px.ico" />
     <Content Include="RohamPaint.ico" />
     <Content Include="Shared\DateTimeSelector.dll" />
