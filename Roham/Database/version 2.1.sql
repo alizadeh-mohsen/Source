@@ -5,52 +5,6 @@ update [ColorDb].[dbo].[Color]
 set LastUpdate =  '01-01-1900'
 where LastUpdate is null;
 
-USE [ColorDb]
-GO
-
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-ALTER PROCEDURE [dbo].[SelectUnit]
-
-AS
-BEGIN
-SELECT [ID]
-      ,[Name]
-	   
-  FROM [Unit]
-END;
-GO
-ALTER PROCEDURE [dbo].[InsertUnit]
-@name nvarchar(50)
-
-AS
-BEGIN
-	INSERT INTO [Unit] 
-	([Name]) 
-	VALUES    
-	(@name)
-END;
-GO
-ALTER PROCEDURE [dbo].[UpdateUnit]
-@name nvarchar(50),
-@id int
-AS
-BEGIN
-UPDATE [Unit] 
-   SET [Name] = @name
-
- WHERE id=@id
-END;
-GO
-USE [ColorDb]
-GO
-/****** Object:  StoredProcedure [dbo].[Search]    Script Date: 2/23/2021 11:52:14 AM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
 GO
 ALTER PROCEDURE [dbo].[Search]
 @carid int=NULL,

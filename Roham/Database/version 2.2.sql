@@ -5,7 +5,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[Search]
+ALTER PROCEDURE [Search]
 @carid int=NULL,
 @typeid int=NULL,
 @code varchar(50)=NULL,
@@ -211,7 +211,7 @@ FROM
 		Color C INNER JOIN
         Car ON C.CarID = Car.ID inner join 
 		ColorType CT on C.ColorTypeID=CT.ID inner join
-		Unit u on u.ID=C.UnitId inner join
+		Unit u on u.ID=C.UnitId left join
 		Base b on b.ID=c.BaseId
 WHERE     
 		C.ID = @colorId;
