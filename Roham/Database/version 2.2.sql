@@ -206,7 +206,8 @@ SELECT
 		U.[Name],
 		c.Accuracy,
 		c.Usage,
-		b.Name baseName
+		b.Name baseName,
+		c.BaseId
 FROM         
 		Color C INNER JOIN
         Car ON C.CarID = Car.ID inner join 

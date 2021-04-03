@@ -37,7 +37,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Roham Formula</ProductName>
     <PublisherName>Mohsen Alizadeh</PublisherName>
-    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationRevision>36</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -247,6 +247,7 @@
   <ItemGroup>
     <Content Include="Database\version 2.0.txt" />
     <Content Include="Database\version 2.1.sql" />
+    <Content Include="Database\version 3.sql" />
     <Content Include="Database\version 2.2.sql" />
     <Content Include="renk_1_256px.ico" />
     <Content Include="RohamPaint.ico" />
